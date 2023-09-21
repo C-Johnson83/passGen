@@ -28,7 +28,7 @@ function generatePassword() {
 
   var symbols = prompt(" would you like to use special characters?\n\nAnswer with y or n")
 
-  if (symbols !== "Y") {
+  if (symbols === "n") {
     chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
   } else {
     chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'" + '!"#$%&()*+,-./:;<=?@[]^_`{|}~';
