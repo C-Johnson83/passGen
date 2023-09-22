@@ -15,7 +15,10 @@ generateBtn.addEventListener("click", writePassword);
 
 function generatePassword() {
   var password = "";
-  var chars
+  var chars ="abcdefghijklmnopqrstuvwxyz";
+  var up = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var num = "0123456789";
+  var symbs = "!@#$%&";
   var count = prompt("Between 8 and 128 characters,\n\n how many characters would you like your password to be?")
 
   if (count < 8) {
@@ -25,13 +28,26 @@ function generatePassword() {
     alert("Calm down a little bit, keep it under 128 characters please.\n\nTry again");
     generatePassword();
   }
+var upper = prompt("Would you like to use uppercase characters?\n\nAnswer with y or n");
 
-  var symbols = prompt(" would you like to use special characters?\n\nAnswer with y or n")
+if(upper === "n") {
+  Chars = chars
+} else {
+  chars = chars + up;
+}
+var numeral = prompt("Would you like to use numeral characters?\n\nAnswer with y or n");
+
+if(numeral === "n") {
+  Chars = chars
+} else {
+  chars = chars + num;
+}
+  var symbols = prompt("Would you like to use special characters?\n\nAnswer with y or n");
 
   if (symbols === "n") {
-    chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    chars = chars;
   } else {
-    chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'" + '!"#$%&()*+,-./:;<=?@[]^_`{|}~';
+    chars = chars + symbs;
   }
   for (var c = 0; (c <= count); c++) {
     var rand = Math.floor(Math.random() * chars.length);
